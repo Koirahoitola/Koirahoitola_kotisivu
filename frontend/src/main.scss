@@ -1,0 +1,6 @@
+
+//imports all of bootstrap
+@use "../node_modules/bootstrap/scss/bootstrap" with(
+    //ovewrite bootstap defaults
+    $primary: #fccc16 //yellow accent
+);

@@ -1,4 +1,4 @@
-import './style.css'
+import './main.css'
 
 async function loadApi() {
     const messageEl = document.getElementById("api-message");
