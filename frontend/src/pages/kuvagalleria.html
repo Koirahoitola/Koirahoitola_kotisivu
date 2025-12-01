@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <link rel="stylesheet" href="/src/main.css" />
+  <link rel="stylesheet" href="/src/styles/footer.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ToinenKoti-kotisivu</title>
 </head>
@@ -23,6 +24,48 @@
   <div id="app"></div>
 
   <script type="module" src="/src/main.ts"></script>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__col">
+        <div class="site-footer__brand">ToinenKoti Koirahoitola</div>
+        <address class="site-footer__address">
+          Esimerkkikatu 1<br>
+          00100 Helsinki<br>
+          Suomi
+        </address>
+        <div class="site-footer__map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1984.5!2d24.9384!3d60.1699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjDCsDEwJzExLjYiTiAyNMKwNTYnMTguMiJF!5e0!3m2!1sen!2sfi!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="site-footer__col site-footer__contacts">
+        <a href="mailto:info@toinenkoti.fi" class="site-footer__mailto">info@toinenkoti.fi</a>
+        <div class="site-footer__phone">
+          <svg class="icon icon-phone"><use href="#icon-phone"></use></svg>
+          <span>+358 40 123 4567</span>
+        </div>
+        <div class="site-footer__social">
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg class="icon"><use href="#icon-facebook"></use></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg class="icon"><use href="#icon-instagram"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bar">
+      <nav class="site-footer__nav">
+        <a href="/src/pages/etusivu.html">Etusivu</a>
+        <a href="/src/pages/hinnasto.html">Hinnasto</a>
+        <a href="/src/pages/yhteystiedot.html">Yhteystiedot</a>
+      </nav>
+      <span class="site-footer__copyright">&copy; <span id="footer-year"></span> ToinenKoti</span>
+    </div>
+  </footer>
+
+  <script src="/src/scripts/footer.js"></script>
 </body>
 
 </html>
