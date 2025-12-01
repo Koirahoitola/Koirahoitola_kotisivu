@@ -46,6 +46,8 @@ window.addEventListener("hashchange", router);
 
 router();
 
+
+
 /**
  * Auto-mount React components declared in HTML via `data-react-component="name"`.
  * Example: <div data-react-component="carousel" data-props='{"foo":1}'></div>
@@ -63,17 +65,8 @@ async function autoMountReactComponents() {
       if (!name) continue;
 
       try {
-        // try .jsx first, then .tsx so both JS and TS components are supported
-        let mod: any = null;
-        try {
-          mod = await import(`./components/${name}.jsx`);
-        } catch (e) {
-          try {
-            mod = await import(`./components/${name}.tsx`);
-          } catch (e2) {
-            throw e2;
-          }
-        }
+        // expect component file to be at ./components/{name}.jsx or .tsx
+        const mod = await import(`./components/${name}.jsx`);
         const Comp = mod && mod.default ? mod.default : mod;
 
         // parse props if provided

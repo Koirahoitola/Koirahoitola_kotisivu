@@ -46,6 +46,8 @@ window.addEventListener("hashchange", router);
 
 router();
 
+
+
 /**
  * Auto-mount React components declared in HTML via `data-react-component="name"`.
  * Example: <div data-react-component="carousel" data-props='{"foo":1}'></div>
