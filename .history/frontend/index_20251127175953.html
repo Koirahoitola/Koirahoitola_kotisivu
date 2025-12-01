@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koirahoitola — Redirecting</title>
+    <!-- Redirect to the bootstrap folder landing page -->
+    <meta http-equiv="refresh" content="0; url=./startbootstrap-agency-gh-pages/" />
+    <style>
+      body { font-family: Arial, sans-serif; text-align: center; padding: 40px; }
+      a { color: #0366d6; }
+    </style>
+    <script>
+      // JS fallback for faster redirect and better browser support
+      (function(){
+        var dest = './startbootstrap-agency-gh-pages/';
+        if (location.pathname === '/' || location.pathname.endsWith('/index.html')) {
+          try { location.replace(dest); } catch (e) { location.href = dest; }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Redirecting to site…</h1>
+    <p>If you are not redirected automatically, <a href="./startbootstrap-agency-gh-pages/">click here</a>.</p>
+  </body>
+</html>
