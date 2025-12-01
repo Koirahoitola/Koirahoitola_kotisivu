@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <link rel="stylesheet" href="/src/main.css" />
+  <link rel="stylesheet" href="/src/styles/footer.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ToinenKoti-kotisivu</title>
 </head>
@@ -23,6 +24,43 @@
   <div id="app"></div>
 
   <script type="module" src="/src/main.ts"></script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-section">
+          <h5>ToinenKoti</h5>
+          <p>Koirahoitola ToinenKoti tarjoaa laadukasta hoitoa koirallesi turvallisessa ja viihtyisässä ympäristössä.</p>
+        </div>
+        <div class="col-md-4 footer-section">
+          <h5>Linkit</h5>
+          <ul class="footer-links">
+            <li><a href="/src/pages/etusivu.html">Etusivu</a></li>
+            <li><a href="/src/pages/hinnasto.html">Hinnasto</a></li>
+            <li><a href="/src/pages/kuvagalleria.html">Kuvagalleria</a></li>
+            <li><a href="/src/pages/yhteystiedot.html">Yhteystiedot</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 footer-section">
+          <h5>Yhteystiedot</h5>
+          <address>
+            <p>Koirahoitola ToinenKoti</p>
+            <p>Esimerkintie 123</p>
+            <p>00100 Helsinki</p>
+            <p>info@toinenkoti.fi</p>
+          </address>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center footer-bottom">
+          <p>&copy; <span id="footer-year"></span> ToinenKoti. Kaikki oikeudet pidätetään.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/src/scripts/footer.js"></script>
 </body>
 
 </html>
