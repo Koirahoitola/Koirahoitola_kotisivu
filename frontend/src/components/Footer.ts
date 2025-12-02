@@ -1,8 +1,12 @@
+import "../styles/footer.css";
+
+export function Footer() {
+  return `
 <footer class="site-footer" role="contentinfo" aria-label="Sivuston alatunniste">
   <div class="site-footer__inner">
     <div class="site-footer__col site-footer__col--left">
       <div class="site-footer__brand">
-        <strong>Terhi Repo / Lemmikkihotola Toinen Koti</strong>
+        <strong>Terhi Repo / Lemmikkihoitola Toinen Koti</strong>
       </div>
       <address class="site-footer__address">
         Myllylammentie 1<br>
@@ -22,10 +26,10 @@
 
     <div class="site-footer__col site-footer__col--right">
       <div class="site-footer__contacts">
-        <a class="site-footer__mailto" href="mailto:info@lemmikkihotola.fi" aria-label="Lähetä sähköpostia">Lähetä sähköpostia</a>
+        <a class="site-footer__mailto" href="mailto:info@lemmikkihoitola.fi" aria-label="Lähetä sähköpostia">Lähetä sähköpostia</a>
         <div class="site-footer__phone">
           <svg class="icon icon-phone" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.2a15.05 15.05 0 006.2 6.2l1.8-1.8a1 1 0 01.9-.3c1 .2 2.1.3 3.3.3a1 1 0 011 1V20a1 1 0 01-1 1C10.6 21 3 13.4 3 4a1 1 0 011-1h2.6a1 1 0 011 1c0 1.2.1 2.3.3 3.3a1 1 0 01-.3.9L6.6 10.2z" /></svg>
-          <a href="tel:+358504707476" aria-label="Soita numeroon +358 50 470 7476">+358 50 470 7476</a>
+          <a href="tel:+358504707476" aria-label="Soita numeroon +358 50 470 7476">+358 50 470 7476 </a>
         </div>
 
         <div class="site-footer__social" aria-label="Sosiaalinen media">
@@ -42,14 +46,16 @@
 
   <div class="site-footer__bar">
     <nav class="site-footer__nav" aria-label="Alatunnisteen linkit">
-      <a href="/etamyynniehtodot">Etämyyntiehtodot</a>
+      <a href="/etamyyntiehdot">Etämyyntiehdot</a>
       <a href="/palveluehdot">Palveluehdot</a>
       <a href="/peruutusehdot">Peruutusehdot</a>
       <a href="/tietosuojaseloste">Tietosuojaseloste</a>
     </nav>
 
     <div class="site-footer__copyright">
-      <span id="footer-year"></span> © Lemmikkihotola Toinen Koti
+      <span id="footer-year"></span> © Lemmikkihoitola Toinen Koti
     </div>
   </div>
 </footer>
+`;
+}

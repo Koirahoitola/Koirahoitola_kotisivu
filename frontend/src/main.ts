@@ -1,5 +1,7 @@
 import "./main.css";
+import "./styles/layout.css";
 import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 import home from "./pages/etusivu.html?raw";
 import hinnasto from "./pages/hinnasto.html?raw";
@@ -30,7 +32,7 @@ async function loadApi() {
     messageEl.textContent = "API error: " + err;
   }
 }
-function router() {
+async function router() {
   const hash = location.hash.replace("#", "") || "/";
   const page = routes[hash] || "<h1>404 - Sivua ei löytynyt</h1>";
 
@@ -39,12 +41,31 @@ function router() {
     app.innerHTML = page;
   }
 
+  // populate footer (pages include a <div id="footer"></div>)
+  const footerEl = document.getElementById("footer");
+  if (footerEl) {
+    footerEl.innerHTML = Footer();
+  } else {
+    // if a page forgot the marker, append footer to body
+    const f = document.createElement('div');
+    f.id = 'footer';
+    f.innerHTML = Footer();
+    document.body.appendChild(f);
+  }
+
+  // update year if present
+  const yearEl = document.getElementById('footer-year');
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
   loadApi();
+
+  // ensure any react components in the newly-inserted page get mounted
+  await autoMountReactComponents();
 }
 document.getElementById("navbar")!.innerHTML = Navbar();
-window.addEventListener("hashchange", router);
+window.addEventListener("hashchange", () => { void router(); });
 
-router();
+void router();
 
 /**
  * Auto-mount React components declared in HTML via `data-react-component="name"`.
