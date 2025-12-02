@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/carousel.css";
 
 const Carousel = () => { // This is a React functional component that renders a horizontal scrolling carousel.
     const [stopScroll, setStopScroll] = React.useState(false);
@@ -59,5 +60,7 @@ const Carousel = () => { // This is a React functional component that renders a 
         </>
     );
 };
+
+
 
 export default Carousel;
