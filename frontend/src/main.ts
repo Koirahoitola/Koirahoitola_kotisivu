@@ -2,22 +2,30 @@ import "./main.css";
 import "./styles/layout.css";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import Yhteystiedot from './pages/Yhteystiedot.jsx';
+import Kuvagalleria from './pages/Kuvagalleria.jsx';
+import Hinnasto from './pages/Hinnasto.jsx';
+import Etusivu from './pages/Etusivu.jsx';
+import Ajanvaraus from './pages/Ajanvaraus.jsx';
+import Admin from './pages/Admin.jsx';
 
-import home from "./pages/etusivu.html?raw";
-import hinnasto from "./pages/hinnasto.html?raw";
-import ajanvaraus from "./pages/ajanvaraus.html?raw";
-import galleria from "./pages/kuvagalleria.html?raw";
-import yhteystiedot from "./pages/yhteystiedot.html?raw";
-import admin from "./pages/admin.html?raw";
+//import home from "./pages/etusivu.html?raw";
+//import hinnasto from "./pages/hinnasto.html?raw";
+//import ajanvaraus from "./pages/ajanvaraus.html?raw";
+//import galleria from "./pages/kuvagalleria.html?raw";
+//import yhteystiedot from "./pages/yhteystiedot.html?raw";
+//import admin from "./pages/admin.html?raw";
 
 
 const routes: Record<string, string> = {
-  "/": home,
-  "/hinnasto": hinnasto,
-  "/ajanvaraus": ajanvaraus,
-  "/galleria": galleria,
-  "/yhteystiedot": yhteystiedot,
-  "/admin": admin,
+ // "/": home,
+  //"/hinnasto": hinnasto,
+ // "/ajanvaraus": ajanvaraus,
+ // "/galleria": galleria,
+ // "/yhteystiedot": yhteystiedot,
+//  "/admin": admin,
 };
 
 async function loadApi() {
@@ -32,13 +40,41 @@ async function loadApi() {
     messageEl.textContent = "API error: " + err;
   }
 }
+let appReactRoot: any = null;
+
 async function router() {
   const hash = location.hash.replace("#", "") || "/";
   const page = routes[hash] || "<h1>404 - Sivua ei löytynyt</h1>";
 
   const app = document.getElementById("app");
   if (app) {
-    app.innerHTML = page;
+    // Render the contact page as a React component
+    if (hash === "/") {
+      if (!appReactRoot) appReactRoot = createRoot(app);
+      appReactRoot.render(React.createElement(Etusivu));
+    } else if (hash === "/yhteystiedot") {
+      if (!appReactRoot) appReactRoot = createRoot(app);
+      appReactRoot.render(React.createElement(Yhteystiedot));
+    } else if (hash === "/galleria") {
+      if (!appReactRoot) appReactRoot = createRoot(app);
+      appReactRoot.render(React.createElement(Kuvagalleria));
+    } else if (hash === "/hinnasto") {
+      if (!appReactRoot) appReactRoot = createRoot(app);
+      appReactRoot.render(React.createElement(Hinnasto));
+    } else if (hash === "/ajanvaraus") {
+      if (!appReactRoot) appReactRoot = createRoot(app);
+      appReactRoot.render(React.createElement(Ajanvaraus));
+    } else if (hash === "/admin") {
+      if (!appReactRoot) appReactRoot = createRoot(app);
+      appReactRoot.render(React.createElement(Admin));
+    } else {
+      // If a React root was previously mounted, unmount it before injecting raw HTML
+      if (appReactRoot) {
+        appReactRoot.unmount();
+        appReactRoot = null;
+      }
+      app.innerHTML = page;
+    }
   }
 
   // populate footer (pages include a <div id="footer"></div>)
