@@ -11,7 +11,7 @@ import Etusivu from './pages/Etusivu.jsx';
 import Ajanvaraus from './pages/Ajanvaraus.jsx';
 import Admin from './pages/Admin.jsx';
 
-//import home from "./pages/etusivu.html?raw";
+//import home from "./pages/etusivu.html?raw";  // Fallback raw HTML pages imports
 //import hinnasto from "./pages/hinnasto.html?raw";
 //import ajanvaraus from "./pages/ajanvaraus.html?raw";
 //import galleria from "./pages/kuvagalleria.html?raw";
@@ -19,7 +19,7 @@ import Admin from './pages/Admin.jsx';
 //import admin from "./pages/admin.html?raw";
 
 
-const routes: Record<string, string> = {
+const routes: Record<string, string> = { // Legacy HTML pages for Fallback
  // "/": home,
   //"/hinnasto": hinnasto,
  // "/ajanvaraus": ajanvaraus,
