@@ -1,6 +1,31 @@
 
-//imports all of bootstrap
-@use "../node_modules/bootstrap/scss/bootstrap" with(
-    //ovewrite bootstap defaults
-    $primary: #fccc16 //yellow accent
-);
+
+$primary: rgb(24, 26, 27);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+header {
+  color: rgb(252, 204, 22); 
+}
+
+.btn {
+  color: rgb(252, 204, 22); 
+}
+
+.btn:hover {
+  color: gold;
+}
+
+.navbar {
+  background-color: #000 !important;   
+}
+
+.navbar-brand,
+.nav-link {
+  color: rgb(201, 200, 198) !important; 
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+  color: gold !important;
+}

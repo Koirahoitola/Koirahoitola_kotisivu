@@ -1,0 +1,15 @@
+/* Layout helper to keep footer at bottom when page content is short */
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#app {
+  flex: 1 0 auto; /* allow main content to expand */
+}
+#footer {
+  flex-shrink: 0;
+}
