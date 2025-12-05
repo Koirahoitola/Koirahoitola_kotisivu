@@ -1,13 +1,23 @@
 import React from 'react';
+import Banner from '../components/Banner';
 
 export default function Etusivu() {
   return (
-    <div className="container text-center mt-5">
-      <h1 className="header">Welcome to Koirahoitola Kotisivu!</h1>
-      <button type="button" className="btn btn-primary">napinväri vaihdettu main.scss</button>
+  <>
+      <Banner
+        image="/gallery/collie.jpg"
+        title="TOINEN KOTI"
+        subtitle={"Myllylammentie 1\n91310 Arkala"}
+      />
 
-      <h2 className="mt-4">Laravel API test</h2>
-      <p id="api-message">Loading...</p>
-    </div>
+      <div className="container text-center mt-5">
+        <button type="button" className="btn btn-primary">
+          napinväri vaihdettu main.scss
+        </button>
+
+        <h2 className="mt-4">Laravel API test</h2>
+        <p id="api-message">Loading...</p>
+      </div>
+    </>
   );
 }
